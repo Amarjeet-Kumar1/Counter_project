@@ -1,0 +1,98 @@
+.page-header{
+    height: 30vh;
+    width: 80vw;
+    margin: auto;
+    position: relative;
+    background-image: linear-gradient(to Right, rgb(103, 223, 223), rgba(225, 124, 201, 0.851));
+}
+.heading{
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    width: 60%;
+    height: 20%;
+    margin: auto;
+   
+}
+.heading p{
+    text-align: center;
+    margin: 0%;
+    color: white;
+    font-size: 4vw;
+}
+
+.input-container{
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    width: 70%;
+    height: 20%;
+
+}
+
+.f-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+#take-input{
+    height: 100%;
+    width: 40%;
+    border: none;
+    padding: 1% 2%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+
+#submit-button{
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    border: none;
+    font-size: medium;
+}
+
+
+.content{
+    width: 70vw;
+    height: 25vh;
+    background-color: rgb(106, 62, 62);
+    margin: 5vh auto;
+    position: relative;
+}
+
+.counter-box{
+    height: 10vh;
+    width: 5vw;
+    background-color: white;
+    position: absolute;
+    top: 7.5vh;
+    left: 32.5vw;
+    overflow: hidden;
+}
+
+.counter-box p {
+    text-align: center;
+    line-height: 9vh;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    background-color: white;
+    border-top: 2px solid black;
+
+}
+p.next{
+    position:  absolute;
+    top: 10vh;
+}
+p.animate{
+    transition-duration: 0.5s;
+    top: 0vh;
+}
