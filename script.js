@@ -1,58 +1,71 @@
+var countInterval;
 
 
-var interval;
-
-
-
-function startCounter(){
-    var iValue = parseInt(document.getElementById('take-input').value) ;
+function startCounter() {
     
+    var iValue = parseInt(document.getElementById("take-input").value);
     
-    if (isNaN(iValue)) {
-        alert("Please enter a number");
+    if(isNaN(iValue)) {
+        alert("Please enter a iValue");
         clearInterval(countInterval);   
         return;
     }
-   
-   
-    // if (iValue < 1 || iValue > 9) {
-    //     alert("Range out of bounds");
-    //     clearInterval(countInterval);
-    //     return;
-    // }
-
-    var current = document.querySelector('.current');
-    var next = document.querySelector('.next');
+    if(iValue < 1 || iValue > 99999) {
+        alert("Range out of bounds");
+        clearInterval(countInterval);
+        return;
+    }
+    
+    var currentNos = document.querySelectorAll(".current");
+    var nextNos = document.querySelectorAll(".next");
     var count = 0;
-
     
-    resetNumbers(current, next);
-    clearInterval(interval);
     
-    interval = setInterval(function(){
-        if (count  == iValue){
-            clearInterval(interval);
-            alert('Counter has stopped');
+    resetNumbers(currentNos, nextNos, 5);
+    
+   
+    clearInterval(countInterval);
+    
+    countInterval = setInterval(function() {
+        if(count === iValue) {
+            clearInterval(countInterval);
+            alert("Counter has stopped");
             return;
         }
-        increaseCount(current, next);
+        increaseCount(currentNos, nextNos, 4);
         count++;
-    } , 1000);
+    }, 1000);
+
 }
 
-function resetNumbers(current, next){
-    current.innerText = 0;
-    next.innerText = 1;
+
+function resetNumbers(currentNos, nextNos, end) {
+    for(var i=0; i<end; ++i) {
+        currentNos[i].innerText = 0;
+        nextNos[i].innerText = 1;
+    }
 }
 
-function increaseCount(current, next){
-    next.classList.add('animate');
 
-    setTimeout(function(){
+
+function increaseCount(currentNos, nextNos, index) {
+    
+    let current = currentNos[index];
+    let next = nextNos[index];
+    
+    if(current.innerText == 9) {
+        increaseCount(currentNos, nextNos, index-1);
+    }
+    
+    next.classList.add("animate");
+    
+    setTimeout(function() {
         current.innerText = next.innerText;
-        next.classList.remove('animate');
+        next.classList.remove("animate");
         next.innerText = parseInt(next.innerText) + 1;
-    },500);
+        if(next.innerText > 9) {
+            next.innerText = 0;
+        }
+    }, 500);
+    
 }
-
-

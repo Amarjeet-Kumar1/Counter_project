@@ -18,7 +18,7 @@
     text-align: center;
     margin: 0%;
     color: white;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 .input-container{
@@ -65,27 +65,36 @@
     height: 25vh;
     background-color: rgb(106, 62, 62);
     margin: 5vh auto;
-    position: relative;
+    
+}
+
+#contain{
+    width: 40%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .counter-box{
     height: 10vh;
     width: 5vw;
-    background-color: white;
-    position: absolute;
-    top: 7.5vh;
-    left: 32.5vw;
+    background-color: rgb(146, 175, 38);
     overflow: hidden;
+    position: relative;
 }
 
 .counter-box p {
+    font-size: 2rem;
+    font-family: sans-serif;
     text-align: center;
     line-height: 9vh;
     height: 100%;
     width: 100%;
     margin: 0%;
     background-color: white;
-    border-top: 2px solid black;
+    border-top: 3px solid black;
 
 }
 p.next{
